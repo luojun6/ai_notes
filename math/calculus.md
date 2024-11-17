@@ -141,4 +141,12 @@ These two curves are definitely related to each other. If you change the specifi
 
 ![calculus_24.png](./images/calculus_24.png)
 
-Exactly how does velocity depend on a distance vs time function?
+Exactly how does velocity depend on a distance vs time function? -> Think critically about what velocity means.
+
+Be ware of that the velocity at a single moment makes no sense. If I show you a picture of a car, just a snapshot in an instant, and I ask you how fast it's going? You'd have no way of telling me.
+
+What you'd need are two separate points in time to compare. That way you can compute whatever the change in distance acroos those times is, divided by the change in time.
+
+![calculus_25.png](./images/calculus_25.png)
+
+That's what velocity is, it's the distance traveled per unit time.
