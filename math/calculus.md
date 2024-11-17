@@ -103,3 +103,42 @@ This relationship between tiny changes to the mystery function and the values of
 Here, we're stumbling into another big idea from calculus -> derivatives.
 
 ![calculus_16.png](./images/calculus_16.png)
+
+## 2 The paradox of the derivative
+
+**"So far as te theories of mathematics are about <span style="color:DodgerBlue">reality</span>, they are not <span style="color:OliveDrab">certain</span>: so far as they are <span style="color:OliveDrab">certain<span>, they are not about <span style="color:DodgerBlue">reality</span>." --- Albert Einstein**
+
+Goals:
+
+1. Learn derivatives
+
+- It's actaully a very subtle idea: The things is though, there's some subtlety to this topic, and a lot of potential for paradoxes if you're not careful.
+
+2. Avoid paradox
+
+- It's common for people to say tha the deivative measures an instantaneous rate of change, but when you think about it, that phrase is actually an </span sytle="color:FireBrick">oxymoron</span>.
+- Chane is something that happens between separate points in time, when you blind yourself to all but just a singe instant, there is not really any room for change.
+
+![calculus_17.png](./images/calculus_17.png)
+
+The instantaneous rate of change is actually nonsense, it makes you appreciate just how clear the father of calculus were in capturing the idea that phrase is meant to evoke, but with a perfectly sensible piece of math, the derivative.
+
+![calculus_18.png](./images/calculus_18.png)
+
+![calculus_19.png](./images/calculus_19.png)
+
+![calculus_20.png](./images/calculus_20.png)
+
+![calculus_21.png](./images/calculus_21.png)
+
+If we were to plot the car's velocity in meters per second as a function of time $v(t)$, it might look like this bump.
+
+![calculus_22.png](./images/calculus_22.png)
+
+These two curves are definitely related to each other. If you change the specific distance vs fime function, you'll have some different velocity vs time function.
+
+![calculus_23.png](./images/calculus_23.png)
+
+![calculus_24.png](./images/calculus_24.png)
+
+Exactly how does velocity depend on a distance vs time function?
