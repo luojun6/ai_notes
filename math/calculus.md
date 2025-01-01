@@ -2,7 +2,7 @@
 
 ## 1 The essence of calculus
 
-**"The art of doing mathematics is finding that <span style="color:DodgerBlue">special case</span> that contains all the germs of generality." --- David Hilbert**
+**"The art of doing mathematics is finding that <span style="color:DodgerBlue">special case</span> that contains all the germs of generality." --- <span style="color:gold">David Hilbert</span>**
 
 ### 1.1 The Beginning Story
 
@@ -46,7 +46,7 @@ And notice that the spacing between the values here corresponds to the thickness
 
 ### 1.3 The Rectangles Approximation
 
-In fact, a nice way to think about the rectangles approximating each ring's area is to fit them all upright side by side along this axis. Each one has a thickness %dr$, which is why they fit so snugly right there together, and the height of any one of these rectangles sitting above some specific value of $r$, like 0.6, is exactly $2\pi$ times that value $r$.
+In fact, a nice way to think about the rectangles approximating each ring's area is to fit them all upright side by side along this axis. Each one has a thickness $dr$, which is why they fit so snugly right there together, and the height of any one of these rectangles sitting above some specific value of $r$, like 0.6, is exactly $2\pi$ times that value $r$.
 
 ![calculus_6.png](./images/calculus_6.png)
 
@@ -116,7 +116,7 @@ Here, we're stumbling into another big idea from calculus -> derivatives.
 
 ## 2 The paradox of the derivative
 
-**"So far as te theories of mathematics are about <span style="color:DodgerBlue">reality</span>, they are not <span style="color:OliveDrab">certain</span>: so far as they are <span style="color:OliveDrab">certain<span>, they are not about <span style="color:DodgerBlue">reality</span>." --- Albert Einstein**
+**"So far as te theories of mathematics are about <span style="color:DodgerBlue">reality</span>, they are not <span style="color:OliveDrab">certain</span>: so far as they are <span style="color:OliveDrab">certain</span>, they are not about <span style="color:DodgerBlue">reality</span>." --- <span style="color:Gold">Albert Einstein</span>**
 
 ### 2.1 Goals
 
@@ -265,3 +265,171 @@ But that's not to say tha the car is static. Approximating its movement with a c
 So whenever you hear people refer to th derivative as an instantaneous rate of change, a prhase which is intrinsically oxymoronic, I want you to think of that as a conceptural shorthand for the best constant approiimation for rate of change.
 
 ![calculus_42.png](./images/calculus_42.png)
+
+## 3 Derivative formulas through geometry
+
+**"You know, for a mathematician, he did not have enough <span style="color:DodgerBlue">imagination</spn>. But he has become a poet and now he is fine." --- <span style="color:Gold">David Hilbert</span>**
+
+### 3.1 Start with $x^{2}$
+
+What is the derivative of $x^{2}$? That is, if you were to look at some value x, and compare it to a value slightly bigger,just $dx$ bigger, what's the corresponding change in the value of the funciton --- $df$?
+
+And in particular, what's $df/dx$, the rate at which this funciton is changing per unit change in $x$.
+
+![calculus_43.png](./images/calculus_43.png)
+
+As a first step for intuition, we know that you can think of this ratio $df/dx$ as the slope of a tangent line to the graph of $x^{2}$, and from that you can see that the slope generally increases as x increases.
+
+At zero, the tangent line is flat, and the slope is zero.
+
+![calculus_44.png](./images/calculus_44.png)
+
+At $x = 1$, it's somehting a bit steeper. But looking at graphs isn't generally the best way to understand the precise formula for a derivative.
+
+![calculus_45.png](./images/calculus_45.png)
+
+For that, it's best to take a more literal look at what $x^{2}$ actually means, and in this case, let's go ahead and picture a square whos side lenght is $x$.
+
+![calculus_46.png](./images/calculus_46.png)
+
+If you increase $x$ by some tiny nugde, some little $dx$, what's the resulting change in the area of that square? That slight change in area is what $df$ means in the context. It's the tiny increase to the value of $f(x) = x^{2}$, caused by increasing $x$ by that tiny nudge $dx$.
+
+![calculus_47.png](./images/calculus_47.png)
+
+Now you can see that there's 3 new bits of area i this diagram, two thin rectangles and a minuscule square.
+
+![calculus_51.png](./images/calculus_51.png)
+
+- The two thin rectangles each have side lengths of $xdx$, so they account for $2xdx$ units of new area.
+- The little square there has an area of $dx^{2}$, but you should think of that as being really tiny, negligibly tiny.
+  - In principle, $dx$ should be thought of as a truly tiny amount, and for those truly tiny amounts, for these truly tiny amounts, a good rule of thumb is that you can ignore anything that includes a $dx$ raised a power greater than 1.
+  - That is, a tiny change square is a negligible change.
+
+**$df = 2xdx$ => ${df\over{dx}} = 2x$**
+
+### 3.2 How about $x^{3}$
+
+![calculus_48.png](./images/calculus_48.png)
+
+Each of those thin squares has a volume of $x^{2}dx$, the area of the face times that little thickness $dx$. So in total this gives us $3x^{2}dx$ of volume change.
+
+And to be sure there are other slivers of volume here along the edges, and that tiny one in the corner left-up, but all of that volume is going to be proportional to $dx^{2}$, so we can safely ignore them.
+
+What that means in terms of graphical intuition is that the slope of the graph of $x^{3}$ at every signle point $x$ is exactly $3x^{2}$.
+
+![calculus_49.png](./images/calculus_49.png)
+
+Reasoning about that slope, it should make sense that in this derivative is high on the left and then $0$ at theo orgin and then high again as you move to the right.
+
+### 3.3 Abstract the Rules
+
+![calculus_50.png](./images/calculus_50.png)
+
+WHen you nudge that input $x$, increasing it slightly to $(x + dx)^{n}$, working out the exact value of that nudged output would involve multiplying togther these n separate $(x + dx)$ terms.
+
+The full expansion would be really complicated, but part of the point of derivatives is that most of that complication can be ignored.
+
+![calculus_52.png](./images/calculus_52.png)
+
+The first term in your expansion is $x^{n}$. This analogous to the area of the original square, or the volume of the original cube from our previous examples.
+
+For the next terms in the expansion you can choose mostly $x$s with a single $dx$. Since there are n different parentheticals from which you could have chosen that single $dx$, this gives us a separate terms,
+
+![calculus_53.png](./images/calculus_53.png)
+
+![calculus_54.png](./images/calculus_54.png)
+
+THis is analogous to how the majority of the new area in the square came from those two bars, each with area $x$ times $dx$, or how the bulk of the new values in the **cube**.
+
+![calculus_55.png](./images/calculus_55.png)
+
+### 3.4 $f(x) = 1\over{x}$
+
+Now on the hand you could just blindly try applying the power rule as $x^{-1} = -1x^{-2}$. Let's have some fun and see if we can reason about this geometrically, rather than just plugging it through some formula.
+
+The value $1\over{x}$ is asking what number multiplied by x eqauls 1?
+![calculus_56.png](./images/calculus_56.png)
+
+Imagine a little rectangle puddle of water sitting in two dimensions whose area is 1. Let's say that its width is x, whch means that the height has to be $1\over{x}$, since the total area of it is 1.
+
+![calculus_57.png](./images/calculus_57.png)
+
+If you increased x up to 3, then the other side has to be squished down to $1\over{3}$.
+
+![calculus_58.png](./images/calculus_58.png)
+
+If you think of this width x of the puddle as being in the xy-plane, then the corresponding output $1\over{x}$, the height of the graph above that point, is whatever the height of your puddle has to be maintain an areaa of 1.
+
+![calculus_59.png](./images/calculus_59.png)
+
+So with this visual in mind, for the derivative, imagine nudging up that value of x by some tiny amount, some tiny $dx$. How must the height of this rectangle change so that the area of the puddle remains constant at 1?
+
+That is, increasing the width by $dx$ adds some new area of the right here. So the puddle has to decrease in height by some $d({1\over{x}})$, so that the area lost off of that top cancels out the area gained.
+
+![calculus_60.png](./images/calculus_60.png)
+
+### 3.5 $sin(\theta)$
+
+![calculus_62.png](./images/calculus_62.png)
+
+![calculus_61.png](./images/calculus_61.png)
+
+## 4 Visualizing the chain rule and product rule
+
+**"Using the chain rule is like peeling an onion: you have to deal with each layer at a time, and if it is too big you will start crying." --- <span style="color:Gold">(Anonymous professor)</span>**
+
+### 4.1 Sum: ${d\over{dx}}(sin(x) + x^{2})$
+
+![calculus_63.png](./images/calculus_63.png)
+
+![calculus_64.png](./images/calculus_64.png)
+
+![calculus_65.png](./images/calculus_65.png)
+
+### 4.2 Product: ${d\over{dx}}(sin(x)x^{2})$
+
+**<span style="color:MediumPurple">Not the best visualization</span>**
+
+If you're dealing with a product of two things, it helps to understand it as some kind of area. In this case, maybe you try to configure some metal setup of a box where the side lengths are $sin(x)$ and $x^{2}$.
+
+Since these are functions, you might think of those sides are adjustable, dependent on the value ofx, which maybe you think of as this number that you can just freely adjust up and down.
+
+Focus on that top side who changes as the function of $sin(x)$. As you change this value of x up from 9, it increases up to a length of 1 as sine of x moves up towards its peak.
+
+![calculus_66.png](./images/calculus_66.png)
+
+And after that it starts to decreas as $sin(x)$ comes down from 1. In the same way, that height there is always changing as $x^{2}$.
+
+![calculus_67.png](./images/calculus_67.png)
+
+So $f(x)$, defined as the product of these functions, is the area of this box. The nedge $dx$ caused that width to change by some small $dsine(x)$, and it caused that height to change by some $dx^{2}$.
+
+![calculus_68.png](./images/calculus_68.png)
+
+This gives us three little snippets of new area:
+
+- A thin rectangle on the bottom whose area is its width - $sin(x)$ => $sin(x)d(x^{2})$
+- A thin rectangle on the right whose area is its height $x^{2}$ => $x^{2}d(sin(x))$
+- The little bit in the corner, but we can ignore that. Its area is ultimately proportional to $d(x^{2})$ that becomes negligibe as $dx$ goes to 0.
+
+![calculus_69.png](./images/calculus_69.png)
+
+![calculus_70.png](./images/calculus_70.png)
+
+### 4.3 Composition: ${d\over{dx}}(sin(x^{2}))$
+
+![calculus_71.png](./images/calculus_71.png)
+
+![calculus_72.png](./images/calculus_72.png)
+
+![calculus_73.png](./images/calculus_73.png)
+
+![calculus_74.png](./images/calculus_74.png)
+
+![calculus_75.png](./images/calculus_75.png)
+
+![calculus_76.png](./images/calculus_76.png)
+
+The cancellation of $dh$ is not just a notation trick! That is a genuine reflection of what's going on with the tiny nudges that underpin everything we do derivatives.
+
+![calculus_77.png](./images/calculus_77.png)
