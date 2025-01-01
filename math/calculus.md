@@ -433,3 +433,111 @@ This gives us three little snippets of new area:
 The cancellation of $dh$ is not just a notation trick! That is a genuine reflection of what's going on with the tiny nudges that underpin everything we do derivatives.
 
 ![calculus_77.png](./images/calculus_77.png)
+
+## 5 What's so special about Euler's number e?
+
+**"Who has not been amazed to learn that the function <span style="color:MediumPurple">$y = e^{x}$</span>, like a phoenix rising again from its own ashes, is it own derivative?." --- <span style="color:Gold">(Anonymous professor)</span>**
+
+### 5.1 Deriving the key proportionality property
+
+![calculus_78.png](./images/calculus_78.png)
+
+What you'll find is that for smaller and smaller choices of $dt$, this value approaches a very specific number, around 0.6931. The central point is that this is some kind of constant.
+
+Unlike derivatives of other functions, all of the stuff that depends on $dt$ is separate from the value of $t$ itself. So the derivative of 2 to the t is just itself, but multiplied by some constant.
+
+Evidently, the rate of change for this function over much smaller timescales, is not quite equal to itself, but it's proportional to itself, with this very peculiar proportionality constant of 0.6931.
+
+![calculus_79.png](./images/calculus_79.png)
+
+![calculus_80.png](./images/calculus_80.png)
+
+There is not too much special about the number 2 here. If instead we had dealt with the function $3^{t}$, the exponential property would also have led us to the conclusion that the derivative of $3^{t}$ is proportional to itself, but this time it would have had a proportionality constant of 1.0986.
+
+![calculus_81.png](./images/calculus_81.png)
+
+And for other bases to your exponent, you can have fun trying to see what the various proportionality constants are, maybe seeing if you can find a pattern in them.
+
+![calculus_82.png](./images/calculus_82.png)
+
+Maybe, you would notice that this number happens to be exactly 3 times the constant associated with the base for 2. So these numbers certainly aren't random, there is some kind of pattern, but what is it? What does 2 have to do with the number of 0.6931, and what does 8 have to do with the number of 2.079?
+
+![calculus_83.png](./images/calculus_83.png)
+
+### 5.2 What is $e$?
+
+A second question that is ultimately going to explan these mystery constants is whether there's some base where that proportionality constant is 1, where the $d(a^{t})$ is not just proportional to itself, but actual equals to itself.
+
+**There is! $e = 2.71828...$**
+
+![calculus_84.png](./images/calculus_84.png)
+
+In fact, it's not just that the number $e$ happens to show up here, this is in a sense what defines the number $e$.
+
+![calculus_85.png](./images/calculus_85.png)
+
+It's a liitle like asking why does $\pi$ of all numbers happen to be the ratio of the circumference of a circle to its diameter. This is at its heart what defines this value.
+
+All exponential funtions are proportional to their own derivative, but $e$ alone is the special number so that proportionality constant is 1, meaning $e^{t}$ actually equals its own derivative.
+
+Look at the graph of $e^{t}$, it has the peculiar property that the slope of a tangent line to any point on this graph equals the hight of that point above the horizontal axis.
+
+![calculus_86.png](./images/calculus_86.png)
+
+### 5.3 Natural logs
+
+The existence of a function like this answers the question of the mystery constants, and it's because it gvies different way to think about functions that are proportional to their own derivative. The key is the **chain rule**.
+
+${d(e^{3tt})\over{dt}} = 3e^{3t}$
+
+![calculus_87.png](./images/calculus_87.png)
+
+Either way, the point is ${d(e^{ct})\over{dt}} = ce^{ct}$, from here, the question of those mystery contants really just comes down to a certain algebraic manipulation.
+
+The number 2 can also be written as e to the natural log of 2 ($2 = e^{ln(2)}$). There is nothing fancy here, this is the definition of the natural log, it ask the question:
+
+![calculus_88.png](./images/calculus_88.png)
+
+So the function $2^{t}$ is the same as the function $e^{ln(2)t}$
+
+![calculus_89.png](./images/calculus_89.png)
+
+From what we just saw, combining the fact that $e^{t}$ is its own derivative with the chain rule, the derivative of this function is proportional to itself, with a proportionality constant equal to the natural log of 2.
+
+![calculus_90.png](./images/calculus_90.png)
+
+![calculus_91.png](./images/calculus_91.png)
+
+In fact, throughout applications of calculus, you rarely see exponentials written as some base to a power t. Instead, you almost always write the exponential as e to the power of some constant times t.
+
+![calculus_92.png](./images/calculus_92.png)
+
+![calculus_93.png](./images/calculus_93.png)
+
+![calculus_94.png](./images/calculus_94.png)
+
+### 5.4 Writing $e^{ct}$ is a choice
+
+There are many ways to write down any particular exponential function. And when you see something written as $e$ to some constant times $t$, that's a choice we make to write it that way, and the number $e$ is not fundamental to that functon itself.
+
+![calculus_95.png](./images/calculus_95.png)
+
+What is special about writing exponentials in terms of $e$ like this is that it gives that constant in the exponent a nice readable meaning.
+
+All sorts of natural phenomena involve some rate of change that's proportional to the thing that's changing. For example, the rate of growth of a population actually does tend to be proportional to the size of the population itself, assuming there isn't some limited resource slowing things down.
+
+![calculus_96.png](./images/calculus_96.png)
+
+If you put a cup of hot water in a cool room, the rate at which the water cools is proportional to the difference in temperature between the room and the water, or said a little differently, the rate at which that difference changes is proportional to itself.
+
+![calculus_97.png](./images/calculus_97.png)
+
+If you invest your money, the rate at which it grows is proportional to the amount of memory there at any time.
+
+![calculus_98.png](./images/calculus_98.png)
+
+In all of these cases, where some variable's rate of change is proportional to itself, the function describing that variable over time is going to look like some kind of exponential.
+
+And even though there are lots of ways to write any exponential funciton, it's very natural to chosse to express these functions as e to the power of some constant times t ($e^{ct}$), since that constant carries a very natural meaning.
+
+![calculus_99.png](./images/calculus_99.png)
