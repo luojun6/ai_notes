@@ -541,3 +541,204 @@ In all of these cases, where some variable's rate of change is proportional to i
 And even though there are lots of ways to write any exponential funciton, it's very natural to chosse to express these functions as e to the power of some constant times t ($e^{ct}$), since that constant carries a very natural meaning.
 
 ![calculus_99.png](./images/calculus_99.png)
+
+## 6 Implicit differentiation
+
+**Do not ask whether a statement is true until you know what it means." --- <span style="color:Gold">Errett Bishop</span>**
+
+### 6.1 Opening circle example
+
+Let's say you have a circle radius 5 centered at the origin of the xy-plane. This is something defined with $x^{2} + y^{2} = 5$, that is, all the points on the circle are a distance 5 from the origin as encapsulated by teh **Pythagorean therorem**, where the sume of the squares of the two legs on this triangle equals the square of the hypotenuse: $5^{2}$.
+
+![calculus_100.png](./images/calculus_100.png)
+
+Suppose you want to find the slope of a tangent line to the circle, maybe at the point $(x, y) = (3, 4)$. Now if you are savvy with geometry, you might already know that this tangent line is perpendicular to the radius touching it at that point.
+
+As with other problems about the slopes of tangent lines to curves, the key thougt here is to zoom in close enough that the curve basically looks just like its own tangent line, and then ask about a tiny step along that curve.
+
+The $y$ component of that little step -> $dy$, and the x component is $dx$, so the slope we want is the rise over run, by divided by dx.
+
+![calculus_101.png](./images/calculus_101.png)
+
+But unlike other tangent slope problems in calculus, **this curve is not the graph of a funciton -> not <span style="color:Orchid">$y = f(x)$</span>**, we can't just take a simpe derivative, by asking about the size of some tiny nudge to the output of a function caused by some tiny nudge to the input.
+
+$x$ is not an input, and $y$ is not an output, they're both just interdependent values related by some equation. This is what's called an implicit curve, it's just the set of all points $(x, y)$ that satisfy some property writen in terms of the two variables, $x$ and $y$.
+
+The procedure for how you actually find $dy$, $dx$ for curves like, is very weird.
+
+You take the derivate of both sides:
+$x^{2} + y^{2} = 5^{2}$ => $2xdx + 2ydy = 0$ => $dy/dx = -x/y$
+
+So at the point with coordinates $(x, y) = (3, 4)$, that slope would be _-3/4_, evidently.
+
+![calculus_102.png](./images/calculus_102.png)
+
+### 6.2 Ladder example
+
+![calculus_103.png](./images/calculus_103.png)
+
+Let's say it's slipping down in such a way that the top of the ladder is dropping at a rate of $1m/s%.
+
+![calculus_104.png](./images/calculus_104.png)
+
+The question is, in that initial moment, what's the rate at which the bottom of the ladder is moving away from the wall? => To apply the chain rule.
+
+The another way to think this problem.
+
+![calculus_105.png](./images/calculus_105.png)
+
+![calculus_106.png](./images/calculus_106.png)
+
+But for the ladder question, these expression were function of time, so taking the derivative has a clear meaning, it's the rate at which expression changes as time changes.
+
+![calculus_107.png](./images/calculus_107.png)
+
+### 6.3 Implict differentiation intution
+
+What makes the circle situation strange is that rather than saying that a small amount of time $dt$ has passed, which causes $x$ and $y$ to change, the derivative just has these tiny nudges $dx$ and $dy$ just floating free, not tied to some other common variable, like time.
+
+![calculus_108.png](./images/calculus_108.png)
+
+What this derivative expression, $2xdx + 2ydy$ actually means, it's a recipe for telling you how much the value $x^{2} + y^{2}$ changes as determined by the poiint $(x , y)$ and the tiny $dx$ that you take. As with all things deriviative, this is only an approximation, but it's one that gets truer and truer for smaller and smaller choices of $dx$ and $dy$.
+
+The key point here is that when you restrict yourself to steps along the circle, you're essentially saying you want to ensure that this value of $S$ doesn't change.
+
+![calculus_109.png](./images/calculus_109.png)
+
+So setting the expression $2xdx + 2ydy = 0$ is the condition under which one of these tiny steps actually stays on the circle. Again, this is only an approximation. Speaking more precisely, that condition is what keeps you on the tangent line of the circle, not the circle itself. But for tiny enough steps, those are essentially the same thing.
+
+![calculus_110.png](./images/calculus_110.png)
+
+There is nothing special of $x^{2} + y^{2} = 25$, let's consider this expression $sin(x)y^{2} = x$. This corresponds to a whole bunch of u-shape curves on the plane.
+
+And those curves, remember, represent all of the points $xy$ where the value of $sin(x)y^{2}$ happens to eqaul the value of x.
+
+![calculus_111.png](./images/calculus_111.png)
+
+![calculus_112.png](./images/calculus_112.png)
+
+From there, depending on what problem you're trying to solve, you have something to work with algebraically, and maybe the most common goal is to try to figure out what $dy/dx$ is.
+
+### 6.4 Derivative of $ln(x)$
+
+![calculus_113.png](./images/calculus_113.png)
+
+![calculus_114.png](./images/calculus_114.png)
+
+## 7 Limits, L'Hôpital's rule, and epsilon delta definitions
+
+**Calculus required <span style="color:DodgerBlue">continuity</span>, and <span style="color:DodgerBlue">continuity</span> was supposed to require the infinitely little; but nobody discover what the <span style="color:YellowGreen">infinitely little</span> might be." --- <span style="color:Gold">Errett Bishop</span>**
+
+### 7.1 The formal definition of derivatives
+
+![calculus_115.png](./images/calculus_115.png)
+
+I want to emphasize that nothing about this right hand side references the paradoxical idea of an infinite small change. The point of limit is to **avoid** that.
+
+This value <span style="color:YellowGreen">$h$</span> is the exact same thing as the <span style="color:YellowGreen">$dx$</span>.
+
+![calculus_116.png](./images/calculus_116.png)
+
+It's just that we're analyzing what happens for arbitrarily small choices of <span style="color:YellowGreen">$h$</span>.
+
+In fact, the only reason people introduce a new variable name into this formal definition, rather than just using <span style="color:YellowGreen">$dx$</span>, is to be extra clear that these changes to the input are just ordinary numbers that have nothing to do with infinitesimals.
+
+There are others who like to interpret this $dx$ as an infinite small change, or just say that $dx$ and $df$ are nothing more than symbols that we shouldn't take too seriously.
+
+### 7.2 ($\epsilon, \delta$) definition of limits
+
+![calculus_117.png](./images/calculus_117.png)
+
+![calculus_118.png](./images/calculus_118.png)
+
+What it means for the limit to exist is that you will always be able to find a range of inputs around our limiting point, some distance $\delta$ around 0. So that any input within $\delta$ of 0 corresponds to an output within a distance $\epsilon$ of 12.
+
+![calculus_119.png](./images/calculus_119.png)
+
+The key point here is that that's true for any $\epsilon$, no matter how small, you'll alawys be able to find the correspinding $\delta$.
+
+In contrast, when a limit does not exit, as in this example here, you can find a sufficiently small $\epsilon$, like 0.4, so that no matter how small you make your range around 0, no matter how tiny $\delta$ is, the correspinding range of outputs is just always too big.
+
+![calculus_120.png](./images/calculus_120.png)
+
+![calculus_121.png](./images/calculus_121.png)
+
+There is no limiting output where everything is within a distance $\epsilon$ of that output.
+
+### 7.3 L'Hôpital's rule
+
+![calculus_122.png](./images/calculus_122.png)
+
+![calculus_123.png](./images/calculus_123.png)
+
+![calculus_124.png](./images/calculus_124.png)
+
+Importantly, those approximation get more and more accurately for smaller and smaller choices of $dx$.
+
+This ratio, ${-\pi}\over{2}$, actually tells us the precise limiting value as x approaches 1. Remember, what that means is that the limiting height on our original graph is evidently eaxtly ${-\pi}\over{2}$.
+
+![calculus_125.png](./images/calculus_125.png)
+
+Instead of these two specific functions, which are both eqaul to 0 at x eqauls 1, think of any two functions, $f(x)$ and $g(x)$, which are both 0 at some common value, <span style="color:PaleVioletRed">$x = a$</span>.
+
+The only constrait is that these have to be functions where you're able to take a derivative of them at $x$ equals $a$, which means they each basically look like a line when you zoom in close enough to that value.
+
+Even though you can't compute $f(a)/g(a)$ at this trouble point, since both of them equal 0, you can ask about this ratio for values of x really close to a, the limit as x approaches a.
+
+It's helpful to think of those nearby inputs as just a tiny nudge, $dx$, away from a. Tha value of f at that nudged point is approximately its derivative, $df/dx$, evaluated at a times $dx$.
+
+Likewise, the value of $g(x)$ at that nudged point is approximately the derivative of g ($dg$), evaluated at a times at $dx => ${dg\over{dx}}(a)dx$.
+
+So near that trouble point, the ratio between the outputs of $f$ and $g$ is actually about same as the ${df\over{dx}}(a)dx$ divided by ${dg\over{dx}}(a)dx$. These $dx$ cancel out, so the ratio of $f$ and $g$ near a is about the same as the ratio between their derivatives.
+
+Because each of those approximations gets more and more accurate for smaller and smaller nudges, this ratio of derivatives gives the precise value for the limit. This is a really handy trick of computing a lof of limits.
+
+![calculus_126.png](./images/calculus_126.png)
+
+## 8 Integration and the fundamental theorem of calculus
+
+**One should never try to prove anything that is not <span style="color:DodgerBlue">almost obvious</span>." --- <span style="color:Gold">Alexander Grothendieck</span>**
+
+## 8.1 Car example
+
+The value those approximations approach can be described so simply, it's just the area underneath this curve.
+
+![calculus_127.png](./images/calculus_127.png)
+
+## 8.2 Araa under graph
+
+This expression is called an integral ff v of t, since it brings all of its values togther, it integrates them.
+
+Question: How does this help? Shall we just skip straight ahead to finding an antiderivative?
+
+![calculus_128.png](./images/calculus_128.png)
+
+But finding the area between a functions's grap and the horizontal axis is somewhat of a common language for many disparate problem that can be broken down and approximated as the sume of a large number of small things.
+
+![calculus_129.png](./images/calculus_129.png)
+
+![calculus_130.png](./images/calculus_130.png)
+
+![calculus_131.png](./images/calculus_131.png)
+
+For a velocity example, think of this right endpoint as a variable, capital T. So we're thniking of this integral of the velocity function between 0 and T, the area under this curve between those input, as a function where the upper bound is the variable.
+
+That area represents the distance the car has travelled after T seconds. In reality, this is a distance vs. time function <span style="color:DodgerBlue">$s(T)$</span>.
+
+![calculus_132.png](./images/calculus_132.png)
+
+Now ask yourself, what is the derivative of that funciton?
+
+On the one hand, a tiny change in distance over a tiny change in time is velocity, that is what velocity means. But there's another way to see this, purely in terms of this graph and this area, which generalizes a lot better to other integral problems.
+
+![calculus_133.png](./images/calculus_133.png)
+
+A slight nudge of $dt$ to the input causes that area to increase, some little $ds$ represented by the area of this sliver. The height of that sliver is the height of the graph at that point $v(t)$, and its width is $dt$.
+
+For small enough $dt$, we can basically consider that sliver to be a reactangle, so this little bit of added area, $ds$, is aproximately equal to $v(T)dT$. Because that's an approximation that gets better and better for smaller $dt$, the derivative of that area function, $ds$, $dT$, at this point equalts $v(T)$, the value of the velocity function at whatever time we tarted on.
+
+![calculus_134.png](./images/calculus_134.png)
+
+And that right there is a super general argument. The derivative of any function giving the area under a graph like this is equal to the function for the graph itself.
+
+![calculus_135.png](./images/calculus_135.png)
