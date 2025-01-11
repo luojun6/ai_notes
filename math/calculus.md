@@ -699,13 +699,13 @@ Because each of those approximations gets more and more accurate for smaller and
 
 **One should never try to prove anything that is not <span style="color:DodgerBlue">almost obvious</span>." --- <span style="color:Gold">Alexander Grothendieck</span>**
 
-## 8.1 Car example
+### 8.1 Car example
 
 The value those approximations approach can be described so simply, it's just the area underneath this curve.
 
 ![calculus_127.png](./images/calculus_127.png)
 
-## 8.2 Araa under graph
+### 8.2 Araa under graph
 
 This expression is called an integral ff v of t, since it brings all of its values togther, it integrates them.
 
@@ -741,4 +741,16 @@ For small enough $dt$, we can basically consider that sliver to be a reactangle,
 
 And that right there is a super general argument. The derivative of any function giving the area under a graph like this is equal to the function for the graph itself.
 
+![calculus_136.png](./images/calculus_136.png)
+
+### 8.3 Fundamental theorem of calculus
+
 ![calculus_135.png](./images/calculus_135.png)
+
+### 8.4 Negative area
+
+What if the velocity function was negative at some point, meaning the car goes backwards? It's still true that a tiny distance traveled $ds$ on a little time interval is about equal to the velocity at that time multiplied by the tiny change in time. It's just that the number you'd plug in for velocity would be negative, so the tiny change in distance is negative.
+
+![calculus_137.png](./images/calculus_137.png)
+
+In terms of our thin rectangles, if a rectangle goes below the horizontal axis, its area represents a bit of distance traveled backwards, so if what you want in the end is to find a distance between the car's start point and its end point, this is something you'll want to subtract.
