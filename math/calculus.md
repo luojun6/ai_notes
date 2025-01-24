@@ -754,3 +754,91 @@ What if the velocity function was negative at some point, meaning the car goes b
 ![calculus_137.png](./images/calculus_137.png)
 
 In terms of our thin rectangles, if a rectangle goes below the horizontal axis, its area represents a bit of distance traveled backwards, so if what you want in the end is to find a distance between the car's start point and its end point, this is something you'll want to subtract.
+
+## 9 What does area have to do with slope?
+
+**We often hear that mathematics consists mainly of <span style="color:PaleVioletRed">proving theorems</span>. Is a writer's job mainly that <span style="color:PaleVioletRed">writing sentences?</span>" --- <span style="color:Gold">Alexander Grothendieck</span>**
+
+### 9.1 WHat is the problem?
+
+One commone type of problem where integration comes up, finding the average of a continuous variable. This is a perfectly useful thing to know in its own right, but what's really need is that it can gives us a completely different perspective for whiy integrals and derivatives are inverses of each other.
+
+![calculus_138.png](./images/calculus_138.png)
+
+### 9.2 Example of $sin(x)$
+
+What is the average height of this graph on that interval of half of $\pi$?
+
+![calculus_139.png](./images/calculus_139.png)
+
+It's not a useless question. All sorts of cyclic phenomena in the world are modeled using sine waves. For example, the number of hours the sun is up per day as a function of what day of the year it is follows a sine wave pattern.
+
+If you wanted to predict the average effectiveness of solar panels in summer months vs. windter months, you'd want to be able to answr a question like this, what is the average value of that sine function over half of its period?
+
+![calculus_140.png](./images/calculus_140.png)
+
+Where as a case like this is going to have all sorts of constants mucking up the function, you and I are going to focus on a pure, unencumbered $sin(x)$ function. But the substance of the approach would be totally the same in any other application.
+
+### 9.3 The average ... of a continous thing?
+
+Usually with averages we think of a finite number of variables, where you can add them all up and divide that sum by how many there are.
+
+![calculus_141.png](./images/calculus_141.png)
+
+BUt there are infinitely many values of $sin(x)$ between 0 and $\pi$, and it's not like we can just add up all those numbers and divide by infinity.
+
+### 9.4 Using integrals
+
+![calculus_142.png](./images/calculus_142.png)
+
+What it means to distribute that $dx$ up top, it means the terms you're adding up will look like $sin(x)dx$ for the various input $x$ that you're sampling. So that numerator looks exactly like an integral expression.
+
+![calculus_143.png](./images/calculus_143.png)
+
+So for larger and larger samples of points, this average will approach the actual integral of $sin(x)$ between 0 and $\pi$, all divided by the length of that interval, $\pi$.
+
+In other words, the average height of this graph is this area divided by its width. On an intuitive level, and just thinking in terms of units, that feels pretty reasonable: Area divided by width gives you an average height.
+
+### 9.5 Let's compute it
+
+![calculus_144.png](./images/calculus_144.png)
+
+![calculus_145.png](./images/calculus_145.png)
+
+Look at this graph of negative cosine, at 0, the slope is 0, and then it increases up to some maximum slope at $\pi$ halves, and then goes back down to 0 at $\pi$. In general, its slope does indeed seem to match the height of the sine graph at every point.
+
+![calculus_146.png](./images/calculus_146.png)
+
+So what doe we have to do to evaluate the integral sine between 0 and $\pi$?
+
+![calculus_147.png](./images/calculus_147.png)
+
+At the start, the question of finidng the average of a function offers and alternaate perspective on why integrals and derivatives are inverses of each other.
+
+Why the area under one grah has anything to do with the slope another graph? Notice how finding this avergae, 2 dived by $\pi$, came down to looking at the change in the antiaderivative:
+
+![calculus_148.png](./images/calculus_148.png)
+
+### 9.6 Rise over run slope
+
+Another way to think about that fraction is as the rise over slope between the point of the antidervative graph below 0 and the point of that graph above $\pi$.
+
+Think about why it might make sense that this slope would represent an avergae value of $sin(x)$ on that region.
+
+By definition, $sin(x)$ is the derivative of this antiderivative graph,it is giving us the slope of negative consine at every point.
+
+Anyway to think about the average value of $sine(x)$,
+
+![calculus_149.png](./images/calculus_149.png)
+
+The only differnece between that and the integral is that the integral asks what happens as $dx$ approaches 0, but that just corresponds with samples of more and more points that approximate the true average increasingly well.
+
+![calculus_150.png](./images/calculus_150.png)
+
+Now for an integral, evaluating it comes down to finding a antiderivative $f(x)$.
+
+[000_00A195.png](./images/000_00A195.png)
+
+In other ways, it is the slope of the antiderivaties between the two endpoints.
+
+## 10 Higher order derivatives
