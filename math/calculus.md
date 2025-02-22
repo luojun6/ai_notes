@@ -837,8 +837,95 @@ The only differnece between that and the integral is that the integral asks what
 
 Now for an integral, evaluating it comes down to finding a antiderivative $f(x)$.
 
-[000_00A195.png](./images/000_00A195.png)
+![calculus_151.png](./images/calculus_151.png)
 
 In other ways, it is the slope of the antiderivaties between the two endpoints.
 
 ## 10 Higher order derivatives
+
+## 11 Taylor series
+
+**For me, mathematics is a collection of <span style="color:DodgerBlue"> theorems</span>; a theorem is a statement about a collection of <span style="color:DodgerBlue">example</span> and the purpose of proving thorems is to classify and explain the <span style="color:DodgerBlue"> theorems</span>." --- <span style="color:Gold">John B. Conway</span>**
+
+### 11.1 Approximating cos(x)
+
+In the physics class, when we were studying a certain problem that had to do with the **potential energy** of pendulum, and for that you need an expression for how high the weight of the pendulum is above its lowest point, and when you work that out it comes out to be proportial to 1 minus the cosine of the angle between the pendulum and the vertical - $R(1 - cos(\theta))$.
+
+![calculus_152.png](./images/calculus_152.png)
+
+The specifics of the problem we were trying to solve are beyond the point here, but this cosine function made the problem awkward and unwidely, and made it less clear how pendulums relate to other oscillating phenomena.
+
+But if you approximate $cos(\theta)$ as $1 - \theta^{2}/2$, everthing just fell into place much more easily.
+
+![calculus_153.png](./images/calculus_153.png)
+
+If you've never seen anything like this before, an approximaton like that might seem completely out of left field. If you graph $cos(\theta)$ along with this function, $(1 - cos(\theta))$, they do seem rather to each other, at lease for small angles near 0, but how would you even think to make this approximation, and how would you find that particular quadratic?
+
+![calculus_154.png](./images/calculus_154.png)
+
+The study of Taylor series is largely about taking non-polynomial functions an dfinding polynomials that approximate them near some input.
+
+![calculus_156.png](./images/calculus_156.png)
+
+![calculus_155.png](./images/calculus_155.png)
+
+![calculus_157.png](./images/calculus_157.png)
+
+![calculus_158.png](./images/calculus_158.png)
+
+The motive here is that polynomials tend to be much easier to deal with than other functions, they're easier to compute, easier to take derivatives, easier to integrate, just all around more friendly.
+
+![calculus_159.png](./images/calculus_159.png)
+
+![calculus_160.png](./images/calculus_160.png)
+
+![calculus_161.png](./images/calculus_161.png)
+
+So let's take a look at that function, $cos(x)$, and really take moment to think about how you might construct a quadratic approximation near $x = 0$. That is, among all of the possible polynomials that look like $P(x) = c_{0} + c_{1}x + c_{2}x^{2}$
+
+![calculus_162.png](./images/calculus_162.png)
+
+Find the one that most resembles $cos(x)$ near $x = 0$, whose graph kind of spoons with the graph of $cos(x)$ at that point.
+
+![calculus_163.png](./images/calculus_163.png)
+
+![calculus_164.png](./images/calculus_164.png)
+
+This gives us the approximation $P(x) = 1 + 0x + (-{1\over{2}})x^{2}$. To get a feel for how good it is, if you estimate $cos(0.1)$ using this polynomial, you'de estimate it to be 0.995, and this is the true value of $cos(0.1)$. It's a really good approximation!
+
+![calculus_166.png](./images/calculus_166.png)
+
+Just take a moment to reflect on what just happened. You had 3 degrees of freedom with this quadratic approximation, the constants $c_{0}$, $c_{1}$, and $c_{2}$.
+
+- $c_{0}$ was responsible for making sure that the output of the approximation matches that of $cos(0)$
+  ![calculus_165.png](./images/calculus_165.png)
+- $c_{1}$ was in charge of making sure that the derivatives match at that point, and $c_{2}$ was responsible for making sure that the second derivative match up.
+  ![calculus_167.png](./images/calculus_167.png)
+- $c_{2}$ was responsible for making sure that the second derivative match up.
+  ![calculus_168.png](./images/calculus_168.png)
+
+This ensures that the way your approximation changes as you move away from $x = 0$, and the way that the rate of change itself changes, is as similar as possible to be behaviour of $cos(x)$, given the amount of control you have.
+
+**You could give yourself more control by allowing more terms in your polynomial and matching higer other derivatives.**
+
+![calculus_169.png](./images/calculus_169.png)
+
+![calculus_170.png](./images/calculus_170.png)
+
+![calculus_171.png](./images/calculus_171.png)
+
+In indeed, the polynomial $P(x) = 1 + 0x + (-{1\over{2}})x^{2} + ({1\over{24}})x^{4}$, which looks like this, is a very close approximation for $cos(x)$ around $x = 0$.
+
+In any physics problem involving the cosine of a samll angle, for example, predictions would be amlost unnoticeably different if you substituted this polynomial of $cos(x)$.
+
+![calculus_172.png](./images/calculus_172.png)
+
+### 11.2 Generalizing
+
+First of all, factorial terms come up very naturally in this proccess. When you take n successive derivatives of $f(x)$ to the n, letting the power rule keep cacasding on down,
+
+### 11.3 $e^{x}$
+
+### 11.4 Geometric of the second term
+
+### 11.5 Convergence issues
