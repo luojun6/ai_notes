@@ -922,9 +922,87 @@ In any physics problem involving the cosine of a samll angle, for example, predi
 
 ### 11.2 Generalizing
 
-First of all, factorial terms come up very naturally in this proccess. When you take n successive derivatives of $f(x)$ to the n, letting the power rule keep cacasding on down,
+First of all, factorial terms come up very naturally in this proccess. When you take n successive derivatives of $f(x)$ to the n, letting the power rule keep cacasding on down, what you'll be left with is $1*2*3*4*5*6*8*n$ on and on up to whatever $n$ is.
+
+![calculus_173.png](./images/calculus_173.png)
+
+So you don't simply set the coefficcients of the polynomial equal to whatever derivative you want, you have to divide by the appropriate factorial to cancel out this.
+
+The second thing to notice is that adding on new terms, like this $c_{4}*x^{4}$, doesn't mess up what the old terms should be, and that's really important.
+
+![calculus_174.png](./images/calculus_174.png)
+
+For example, the second derivative of this polynomial at $x=0$ is still equal to 2 times the second coefficient $(-{1\over2})$, even after you introduce higher order terms. And it's because we're plugging in $x=0$, so the second derivative of any higher oreder term, which all include an $x$, will just wash away.
+
+![calculus_175.png](./images/calculus_175.png)
+
+And the same goes for any other derivative, which is why each derivative of a polynomial at $x=0$ is controlled by one and only one of the coefficents.
+
+If instead you were approximating near an input other than 0, like $x=\pi$, in order to get the same effect you would have to write your polynomial in tearms of powers of $(x - \pi)$, or whatever input you're looking at.
+
+![calculus_176.png](./images/calculus_176.png)
+
+This makes it look noticeable more complicated, but all we're doing is making sure that the point $\pi$ looks and behaves like 0, so the plugging in $x = \pi$ will result in a lot of nice cancellation that leaves only one constant.
+
+![calculus_177.png](./images/calculus_177.png)
+
+And finally, on a more philiosophical level, notice how what we're doing here is basically taking information about higher orde derivatives of a function at a single point, and translating that into information about the value of the function near that point.
+
+You can take as many derivatives of cosine as you want. It follows this nice cyclic pattern, $cos(x)$, $-sin(x)$, $-cos(x)$, $sin(x)$, $cos(x)$ and then repeat. And the value of each one of these is easy to compute at $x=0$,it gives the cyclic pattern 1, 0, -1, 0 and then repeat.
+
+Knowing the values of all those higher order derivaties is a lot of informaiton about $cos(x)$, even though it only involves plugging in a single number, $x=0$.
+
+![calculus_178.png](./images/calculus_178.png)
+
+So what we're doing is leveraging that information to get an approximation arund this input, and you do it by creating a polynomial whose higher orde rderivative are designed to match up with those of cosine, following this same 1, 0, -1, 0, cyclic pattern.
+
+![calculus_179.png](./images/calculus_179.png)
+
+And to do that, you just make sure each coefficient of the polynomial follow that same pattern, but you have to divide each one by appropriate factorial, which is what cancesl out the cascading effect of many power rule applications.
+
+![calculus_180.png](./images/calculus_180.png)
+
+The polynomials you get by stopping this process at any point are called **Taylor polynomials** for $cos(x)$. More generally, and hence more abstractly, if we were dealing with some other function other than cosine, you would compute its derivative, its second derivative, and so on, getting as many terms sa you'd like, and you would evaluate each one of them at $x=0$.
+
+Then for the polynomial approximation, the coefficient of each x to the n term ($x^{n}$) should be any point are called **Taylor Polynomials** for $cos(x)$.
+
+And when you see it, think to yourself that the constant term ensures that the value of the polynomial matches with the value of $f$.
+
+![calculus_181.png](./images/calculus_181.png)
+
+The next term ensures that the slope of the polynomial matches the slope of the function at $x=0$.
+
+![calculus_182.png](./images/calculus_182.png)
+
+The next term ensures that the rate at which the slope changes is the same at that point, and so on, depends how many terms as you want.
+
+![calculus_183.png](./images/calculus_183.png)
+
+![calculus_184.png](./images/calculus_184.png)
+
+And the more terms you choose, the closer the approximation, but the trade-off is that the polynomial you'de get would be more complicated.
+
+And to make even more general, if you want to approximate near some input other than 0, which we'll call $a$, you would write this polynomial in terms of powers of $(x - a)$, and you would evaluate all the derivatives of $f$ at that input $a$. This is what Taylor Polynomials look like in their fullest generality.
+
+![calculus_185.png](./images/calculus_185.png)
+
+Changing the value of $a$ changes where this approximation is hugging the original function, where its higher order derivatives will be equal to those of the original function.
 
 ### 11.3 $e^{x}$
+
+![calculus_186.png](./images/calculus_186.png)
+
+![calculus_187.png](./images/calculus_187.png)
+
+![calculus_188.png](./images/calculus_188.png)
+
+![calculus_189.png](./images/calculus_189.png)
+
+![calculus_191.png](./images/calculus_190.png)
+
+With that as a foundation, in the sprit of showing you just how connected all the topics of calculus are, let me turn to something kind of fun: a completely different way to understand this second order term of the Taylor polynomial, but geometrically.
+
+![calculus_191.png](./images/calculus_191.png)
 
 ### 11.4 Geometric of the second term
 
