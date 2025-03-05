@@ -1000,10 +1000,65 @@ Changing the value of $a$ changes where this approximation is hugging the origin
 
 ![calculus_191.png](./images/calculus_190.png)
 
+### 11.4 Geometric of the second term
+
 With that as a foundation, in the sprit of showing you just how connected all the topics of calculus are, let me turn to something kind of fun: a completely different way to understand this second order term of the Taylor polynomial, but geometrically.
 
 ![calculus_191.png](./images/calculus_191.png)
 
-### 11.4 Geometric of the second term
+It's related to the fundamental theorem of calculus,
+
+![calculus_192.png](./images/calculus_192.png)
 
 ### 11.5 Convergence issues
+
+You would have a phenomenally useful tool for approximating these Taylor Polynomials. But if you're thinking like a mathematician, one question you might ask is whether or not it makes sense to never stop and just add infinitely many terms.
+
+In math, an infinite sum is called a **series**, so even though one of these approximation with finitely many terms is called a Taylor Polynomial, adding all infinitely many terms gives what's called a Taylor series.
+
+You have to be really careful with the idea of an infinite series, because it doesn't actualy make sense to add infinitely many thing, you can only hit the plus button on the calculator so mamy times.
+
+![calculus_193.png](./images/calculus_193.png)
+
+But if you have a series where adding more and more of the terms, which makes sense at each step, gets you increasly close to some specific value. What you say is that the series converges to that value.
+
+![calculus_194.png](./images/calculus_194.png)
+
+Or if you're comfortable extending the definition of equality to include this kind of series convergence, you'd say that the series as a whole. this infinite sum, equals the value it's converging to.
+
+For example: $e^{x}$ at $x=1$
+![calculus_195.png](./images/calculus_195.png)
+
+As you add more and more polynomial terms, the total sum gets closer and closer to the value $e$, so you say that this infinite series converges to the number $e$.
+
+In fact, it turns out that if you plug in any other value of $x$, like $x=2$, and look at the value of the higher and higher order Taylor Polynomials at this value, they will converge towards $e^{x}$, which is $e^{2}$ in this case.
+
+![calculus_196.png](./images/calculus_196.png)
+
+This is true for any input, no matter how far away from 0 it is, even though these Taylor Polynomials are constructed only from derivative information gathered at the input 0.
+
+In a case like this, we say that $e^{x}$ equals its own Taylor series at all inputs $x$. WHich is kind of a magical thing to have happen. Even though this is also true for a couple other important functions, things like sine and cosine, sometimes these series only converge within a certain range around the input whose derivative information you're using.
+
+If you work out the Taylor series for the natural log of x around the input $x=1$, which is built by evaluating the higher order derivative of the natural log of x at $x=1$,, this is what it would like.
+
+![calculus_197.png](./images/calculus_197.png)
+
+![calculus_198.png](./images/calculus_198.png)
+
+![calculus_199.png](./images/calculus_199.png)
+
+When you plug in an input betwen 0 and 2, adding more and more terms of this series will indeed get you closer and closer to the natural log of that input.
+
+![calculus_200.png](./images/calculus_200.png)
+
+![calculus_201.png](./images/calculus_201.png)
+
+But outside of that range, even by just a little bit, the series fails to approach anything. As you add one more and more terms, the sum bounces back and forth wildly. It does not, as you might expect, approach the natural log of that value, even though the natural log of x is perfectly well defined for inputs above 2.
+
+In some sense, the derivative information of $ln(x)$ at $x=1$ doesn't propagate out that far. In case like this, wheere adding more terms of the series doesn't approach anything, you say that the series diverges.
+
+![calculus_202.png](./images/calculus_202.png)
+
+And that maximum distance between the input you're approximating, near and points the outputs of these polynomial actually converge is called the radius of convergence for the Taylor series.
+
+![calculus_203.png](./images/calculus_203.png)
